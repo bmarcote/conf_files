@@ -1,0 +1,130 @@
+# Process the password files first
+#
+#-------------------------------------
+#source "gpg -dq ~/.mutt/mailpasswd.gpg | "
+
+#set my_tmpsecret=`gpg -o ~/.mutt/.tmp -d ~/.mutt/.contr.gpg`
+#set my_apass=`awk '/dam:/ {print $2}' ~/.mutt/.tmp`
+#set my_mpass=`awk '/me:/ {print $2}' ~/.mutt/.tmp`
+#set my_del=`rm -f ~/.mutt/.tmp`
+
+set text_flowed=yes
+set beep_new
+set ascii_chars=yes
+#set use_form=yes
+set sort_aux=threads
+set sort=reverse-date
+set sort_browser=date
+# default: "!%a, %b %d, %Y at %YI:%M:%D%p %Z"
+set date_format="%b %d %I:%M"
+#set index_format="%Z %4.4c %D %-18.17L %s"
+set index_format="%Z %D %-18.17L %s"
+set visual="vim"
+set editor='vim + -c "set wrap" -c "set nocp" -c "?^$" -c "set expandtab textwidth=0 | normal }j"'
+set signature=/home/gamma/folre/bmarcote/.mutt/signatures
+#set pager_index_lines=20
+set header_cache=~/.mutt/headers
+set message_cachedir=~/.mutt/cache/bodies
+#set certificate_file=~/.mutt/certificates
+# Collapse all threads by default
+folder-hook . "exec collapse-all"
+# Sidebar patch
+##set sidebar_delim='|'
+##set sidebar_visible=no
+#set sidebar_width=24
+#bind index,pager <down> sidebar-next
+#bind index,pager <up> sidebar-prev
+#bind index,pager <right> sidebar-open
+
+macro index <f6> '<sync-mailbox><enter-command>source ~/.mutt/account.jive<enter><change-folder>!<enter>'
+macro index <f7> '<sync-mailbox><enter-command>source ~/.mutt/account.dam<enter><change-folder>!<enter>'
+macro index <f8> '<sync-mailbox><enter-command>source ~/.mutt/account.me<enter><change-folder>!<enter>'
+
+folder-hook 'JIVE' 'source ~/.mutt/account.jive'
+folder-hook 'DAM' 'source ~/.mutt/account.dam'
+folder-hook 'ME' 'source ~/.mutt/account.me'
+# the default account
+source ~/.mutt/account.jive
+
+#macro index <f2> '<sync-mailbox><enter-command>source ~/.mutt/account.dam<enter><change-folder>!<enter>'
+#macro index <f3> '<sync-mailbox><enter-command>source ~/.mutt/account.me<enter><change-folder>!<enter>'
+
+# Setup for DAM mail
+#set folder="imap://imap.am.ub.es/"
+#mailboxes =inbox =Drafts =Sent =Junk
+#folder-hook 'imap://imap.am.ub.es/' " \
+#	set folder='imap://imap.am.ub.es/' \
+#	    spoolfile='imap://imap.am.ub.es/INBOX' \
+#	    smtp_url='smtp://smtp.am.ub.es:465' \
+#	    smtp_pass=$my_apass \
+#	    from='Benito Marcote <bmarcote@am.ub.es>' \
+#	    realname='Benito Marcote' "
+#
+## Setup for DAM mail
+#set folder="imap://imap.am.ub.es/"
+#mailboxes =INBOX =Drafts =Sent =Junk
+#folder-hook 'imaps://p01-imap.mail.me.com/' " \
+#	set folder='imaps://imap.mail.me.com/' \
+#            smtp_url='smtp://smtp.mail.me.com:587' \
+#            smtp_pass=$my_mpass \
+#            from='Benito <benito.hawk@me.com>' \
+#            realname='Benito' "
+
+# Macros to change between accounts
+macro index <esc>1 "y1<return><return>"
+macro index <esc>2 "y5<return><return>"
+
+
+
+# Other customuzations
+set smart_wrap=yes
+set timeout=10
+#set ssl_starttls=yes
+#set ssl_force_tls=yes
+#unset ssl_use_sslv3
+set mail_check=60
+hdr_order Date From To Cc
+auto_view text/html
+set markers=no
+
+# Applications for attachments
+#application/pdf; mutt_bgrun evince %s; test=RunningX
+#application/pdf; evince %s
+#text/html; links2 -dump -force-html %s; needsterminal; copiousoutput;
+#text/html; firefox %s;
+#text/plain; vim %s
+
+
+#mailboxes "=inbox"
+#mailboxes "=INBOX.Sent"
+#mailboxes "=INBOX.Drafts"
+#mailboxes "=INBOX.API"
+#mailboxes "=INBOX.Classes"
+#mailboxes "=INBOX.GMRT"
+#mailboxes "=INBOX.LOFAR"
+#mailboxes "=INBOX.MAGIC"
+#mailboxes "=INBOX.Gamma Binaries"
+#mailboxes "=INBOX.CWBs"
+#mailboxes "=INBOX.Proposals"
+#mailboxes "=INBOX.Tash"
+#mailboxes "=INBOX.Trans-Alert"
+#mailboxes "=INBOX.Astr-Telegram"
+
+
+# New emails
+color index red black ~N
+# Deleted emails
+color index magenta black ~D
+# Flagged emails
+color index brightyellow black ~F
+# Status (upper and lower bars) colors
+color status green white
+
+# Alias: address book
+source ~/.mutt/.mutt-alias
+set alias_file=~/.mutt/.mutt-alias
+
+macro index \co |urlview\n 'call urlview to extract URLs out of a message'
+
+
+

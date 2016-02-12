@@ -1,0 +1,4 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_1='/'
+let g:netrw_dirhist_2='/jop93_0/marcote/local/yakuake-2.9.9/build/CMakeFiles'
