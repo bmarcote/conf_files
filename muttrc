@@ -21,7 +21,7 @@ set date_format="%b %d %I:%M"
 set index_format="%Z %D %-18.17L %s"
 set visual="vim"
 set editor='vim + -c "set wrap" -c "set nocp" -c "?^$" -c "set expandtab textwidth=0 | normal }j"'
-set signature=/home/gamma/folre/bmarcote/.mutt/signatures
+set signature=~/.mutt/signatures
 #set pager_index_lines=20
 set header_cache=~/.mutt/headers
 set message_cachedir=~/.mutt/cache/bodies
@@ -46,35 +46,10 @@ folder-hook 'ME' 'source ~/.mutt/account.me'
 # the default account
 source ~/.mutt/account.jive
 
-#macro index <f2> '<sync-mailbox><enter-command>source ~/.mutt/account.dam<enter><change-folder>!<enter>'
-#macro index <f3> '<sync-mailbox><enter-command>source ~/.mutt/account.me<enter><change-folder>!<enter>'
-
-# Setup for DAM mail
-#set folder="imap://imap.am.ub.es/"
-#mailboxes =inbox =Drafts =Sent =Junk
-#folder-hook 'imap://imap.am.ub.es/' " \
-#	set folder='imap://imap.am.ub.es/' \
-#	    spoolfile='imap://imap.am.ub.es/INBOX' \
-#	    smtp_url='smtp://smtp.am.ub.es:465' \
-#	    smtp_pass=$my_apass \
-#	    from='Benito Marcote <bmarcote@am.ub.es>' \
-#	    realname='Benito Marcote' "
-#
-## Setup for DAM mail
-#set folder="imap://imap.am.ub.es/"
-#mailboxes =INBOX =Drafts =Sent =Junk
-#folder-hook 'imaps://p01-imap.mail.me.com/' " \
-#	set folder='imaps://imap.mail.me.com/' \
-#            smtp_url='smtp://smtp.mail.me.com:587' \
-#            smtp_pass=$my_mpass \
-#            from='Benito <benito.hawk@me.com>' \
-#            realname='Benito' "
 
 # Macros to change between accounts
 macro index <esc>1 "y1<return><return>"
 macro index <esc>2 "y5<return><return>"
-
-
 
 # Other customuzations
 set smart_wrap=yes

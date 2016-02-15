@@ -1,7 +1,8 @@
 export PATH=/jop93_0/marcote/local/anaconda3/bin/:$PATH:/jop93_0/marcote/local/bin:/jop93_0/marcote/local/usr/local/bin:/jop93_0/marcote/local/usr/bin:/astroware/bin/:/jop93_0/marcote/local/casa-release-4.5.0-el6/bin/
 
 
-export LD_LIBRARY_PATH=.:/jop93_0/marcote/local/usr/lib:/jop93_0/marcote/local/usr/lib64:/usr/lib64/
+
+export LD_LIBRARY_PATH=.:/jop93_0/marcote/local/usr/lib:/jop93_0/marcote/local/usr/lib64:/usr/lib64/:/jop93_0/marcote/local/usr/lib64:/usr/include/
 ##########. /Users/hawky/aips/LOGIN.SH
 export HOME2=/jop93_0/marcote
 export PYTHONPATH=PYTHONPATH:$HOME2/scripts

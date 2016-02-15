@@ -1,5 +1,14 @@
-" REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
-filetype plugin on
+" Vundle. Managment of plugins
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+
+
+call vundle#end()
+filetype plugin indent on
 
 " IMPORTANT: win32 users will need to have 'shellslash' set so that latex
 " can be called correctly.
@@ -20,10 +29,9 @@ let g:tex_flavor='latex'
 
 " Color syntax highlighting option on
 syntax on
-" Color syntax monokai:
 syntax enable
 colorscheme monokai
-command Py set syntax=python
+command -nargs=0 Py :set syntax=python
 
 " Use a ortographic corrector (english)
 runtime plugins/spellfile.vim
@@ -47,19 +55,25 @@ set incsearch
 set ignorecase
 set showmatch
 set ruler
+"set number
 set title
 set wildmenu
-set foldlevel=0
+set foldenable
+set foldlevelstart=10
+set foldnestmax=10
+set foldmethod=indent
+" other possible values: marker, manual, expr, syntax, diff
 set clipboard+=unnamed
-"set cursorline
-set wildmenu
 set pastetoggle=<F2>
 set autoread
-" For gvim:
+set lazyredraw
+
+
 set guioptions-=m " remove the menu bar
 set guioptions-=T " remove the toolbar
-"set guioptions-=r " remove the scrollbar
+set guioptions-=r " remove the scrollbar
 
-" To avoid messages during saving in a remote file
-let g:netrw_silent=1
+"let g:netrw_silent=1
+
+
 
