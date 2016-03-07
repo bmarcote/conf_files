@@ -1,6 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
-let g:netrw_dirhist_1='/'
-let g:netrw_dirhist_2='/jop93_0/marcote/local/yakuake-2.9.9/build/CMakeFiles'
-let g:netrw_dirhist_3='/jop93_0/marcote/scripts/conf_files/vim/bundle'
-let g:netrw_dirhist_4='/System/Library/LaunchAgents'
