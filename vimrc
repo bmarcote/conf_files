@@ -1,1 +1,1 @@
-/Users/Hawky/.vimrc
+/home/marcote/.vimrc

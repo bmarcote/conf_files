@@ -1,1 +1,1 @@
-/Users/hawky/.vim
+/home/marcote/.vim

@@ -1,8 +1,8 @@
-export PATH=/jop93_0/marcote/local/anaconda3/bin/:/jop93_0/marcote/local/texlive/2015/bin/x86_64-linux:$PATH:/jop93_0/marcote/local/bin:/jop93_0/marcote/local/usr/local/bin:/jop93_0/marcote/local/usr/bin:/astroware/bin/:/jop93_0/marcote/local/casa-release-4.5.0-el6/bin/
+export PATH=/jop93_0/marcote/local/anaconda3/bin/:/jop93_0/marcote/local/texlive/2015/bin/x86_64-linux:$PATH:/jop93_0/marcote/local/bin:/jop93_0/marcote/local/usr/local/bin:/jop93_0/marcote/local/usr/bin:/astroware/bin/:/jop93_0/marcote/local/casa-release-4.5.0-el6/bin/:/jop93_0/marcote/local/obit-1.1.534-1-64b
 
 
 
-export LD_LIBRARY_PATH=.:/jop93_0/marcote/local/usr/lib:/jop93_0/marcote/local/usr/lib64:/usr/lib64/:/jop93_0/marcote/local/usr/lib64:/usr/include/
+export LD_LIBRARY_PATH=.:/jop93_0/marcote/local/usr/lib:/jop93_0/marcote/local/usr/lib64:/usr/lib64/:/jop93_0/marcote/local/usr/lib64:/usr/include/:/jop93_0/marcote/local/obit-1.1.534-1-64b/lib64
 ##########. /Users/hawky/aips/LOGIN.SH
 export HOME2=/jop93_0/marcote
 export PYTHONPATH=PYTHONPATH:$HOME2/scripts
