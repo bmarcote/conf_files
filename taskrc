@@ -8,15 +8,21 @@
 #   variable=      -- By specifying no value, this means no default
 #   #variable=foo  -- By commenting out the line, or deleting it, this uses the default
 
+
+
+# Modifying the default coefficients. I do not want tasks blocking other ones
+# to have a higher grate as I typically divide all projects in several
+# sub-tasks.
+urgency.blocking.coefficient = 0.0 # blocking other tasks
+
+
+
 # Use the command 'task show' to see all defaults and overrides
 
 # Files
-data.location=~/.task
+data.location=~/.config/task
 
-weekstart=Monday
-defaultwidth=100
-
-include ~/.task/themes/dark-16.theme
+include ~/.config/task/themes/dark-16.theme
 
 # Color theme (uncomment one to use)
 # include /usr/share/taskwarrior/light-16.theme
@@ -34,3 +40,4 @@ include ~/.task/themes/dark-16.theme
 #include /usr/share/taskwarrior/solarized-light-256.theme
 # include /usr/share/taskwarrior/no-color.theme
 
+news.version=2.6.0
